@@ -1,14 +1,14 @@
-Warsaw 42 Project\n
-2 stacks
-You need to sort a stack of integers with the fewest moves.
-Available moves:
-pa - move number from stack B to A
-pb - move number from stack A to B
-sa - swap two numbers at the top of stack A
-sb - swap two numbers at the top of stack B
-ra - first argument becomes the last one, rest goes up (stack A)
-rb - first argument becomes the last one, rest goes up (stack B)
-rr - ra and rb at the same time
-rra - like ra but in the other way
-rrb - like rb but in the other way
-rrr - rra and rrb at the same time 
+Warsaw 42 Project<br />
+2 stacks<br />
+You need to sort a stack of integers with the fewest moves.<br />
+Available moves:<br />
+pa - move number from stack B to A<br />
+pb - move number from stack A to B<br />
+sa - swap two numbers at the top of stack A<br />
+sb - swap two numbers at the top of stack B<br />
+ra - first argument becomes the last one, rest goes up (stack A)<br />
+rb - first argument becomes the last one, rest goes up (stack B)<br />
+rr - ra and rb at the same time<br />
+rra - like ra but in the other way<br />
+rrb - like rb but in the other way<br />
+rrr - rra and rrb at the same time <br />
