@@ -1,4 +1,4 @@
-Warsaw 42 Project
+Warsaw 42 Project\n
 2 stacks
 You need to sort a stack of integers with the fewest moves.
 Available moves:
