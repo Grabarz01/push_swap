@@ -6,7 +6,7 @@
 /*   By: fgrabows <fgrabows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 09:54:46 by fgrabows          #+#    #+#             */
-/*   Updated: 2024/07/18 10:34:43 by fgrabows         ###   ########.fr       */
+/*   Updated: 2024/07/18 13:08:57 by fgrabows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,5 @@ int				ft_count_args(t_list *stack_a);
 void			ft_set_stack(t_list **stack_a, char **str);
 void			ft_insert_arg(t_list **stack_a, char *arg);
 void			ft_add_node(t_list **stack_a, int a);
-
+int				ft_int_atoi(char *str, unsigned int *a);
 #endif

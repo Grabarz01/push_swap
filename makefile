@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 C_FILES = comands_00.c comands_01.c comands_exe.c cost_cal.c find_in_stack.c free_fun.c \
-		input_checkers.c main.c sorting.c stack_builders.c stack_checkers.c stack_management.c
+		input_checkers.c main.c sorting.c stack_builders.c stack_checkers.c stack_management.c ft_int_atoi.c
 O_FILES = $(C_FILES:.c=.o)
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
@@ -25,7 +25,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	make -C $(LIBFT_PATH) clean 
+	make -C $(LIBFT_PATH) fclean 
 
 re: fclean all
 
