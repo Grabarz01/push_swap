@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_checkers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgrabows <fgrabows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgrabows <fgrabows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 19:57:07 by fgrabows          #+#    #+#             */
-/*   Updated: 2024/07/18 10:35:52 by fgrabows         ###   ########.fr       */
+/*   Updated: 2024/07/18 20:11:42 by fgrabows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_duplicates(t_list **stack_a)
 		}
 		check = head;
 		head = check->lower;
-		value = check->number;//delete and use check->number
+		value = check->number;
 	}
 }
 //checks for chars different than digits and spaces

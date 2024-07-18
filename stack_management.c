@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_management.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgrabows <fgrabows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgrabows <fgrabows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:21:13 by fgrabows          #+#    #+#             */
-/*   Updated: 2024/07/18 10:33:47 by fgrabows         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:25:02 by fgrabows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_set_positions(t_list *stack_a, t_list *stack_b, t_limit *a_limits, t_limit *b_limits)//do tests for it
+void ft_set_positions(t_list *stack_a, t_list *stack_b, t_limit *a_limits, t_limit *b_limits)
 {
 	int	pos;
 
@@ -85,16 +85,14 @@ void	ft_replace(t_list **stack_a,t_list **stack_b, t_cost *place)
 		rrr(*stack_a,*stack_b);
 }
 
-unsigned int	ft_end_move(t_list *stack_a, t_limit *a_limts)
+void	ft_end_move(t_list *stack_a, t_limit *a_limts)
 {
 	int				pos;
-	unsigned int	cost;
 
 	pos = ft_get_pos(stack_a, a_limts->min);
 	if (pos > a_limts->size / 2)
 	{
 		pos = a_limts->size - pos;
-		cost = pos;
 		while (pos-- > 0)
 		{
 			rra(stack_a);
@@ -102,11 +100,9 @@ unsigned int	ft_end_move(t_list *stack_a, t_limit *a_limts)
 	}
 	else
 	{
-		cost = pos;
 		while (pos-- > 0)
 		{
 			ra(stack_a);
 		}
 	}
-	return (cost);
 }

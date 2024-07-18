@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_long_atoi.c                                     :+:      :+:    :+:   */
+/*   ft_int_atoi.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgrabows <fgrabows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgrabows <fgrabows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 10:45:24 by fgrabows          #+#    #+#             */
-/*   Updated: 2024/07/18 13:11:39 by fgrabows         ###   ########.fr       */
+/*   Updated: 2024/07/18 17:32:37 by fgrabows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int ft_int_atoi(char *str , unsigned int *a)
 	while(*str && (*str >= '0' && *str <= '9'))
 	{
 		*a = *a * 10 + (*str - '0');
-		if(*a > (long)INT_MAX + 1)
+		if(*a > (unsigned int)INT_MAX + 1)
 			return(0);
-		else if (*a > INT_MAX && minus == -1)
+		else if (*a > (unsigned int)INT_MAX && minus == 1)
 			return(0);
 		str++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_builders.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgrabows <fgrabows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgrabows <fgrabows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:03:34 by fgrabows          #+#    #+#             */
-/*   Updated: 2024/07/18 13:10:03 by fgrabows         ###   ########.fr       */
+/*   Updated: 2024/07/18 20:08:42 by fgrabows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,15 @@ void	ft_insert_arg(t_list **stack_a, char *arg)
 		ft_free_nodes(stack_a);
 		return ;
 	}
-	num = a * minus;
+	num = (int)a * minus;
 	ft_add_node(stack_a, num);
 }
 
-void	ft_set_stack(t_list **stack_a, char **str)
+void	ft_set_stack(t_list **stack_a, char **str, int i)
 {
 	char	**args;
-	int		i;
 	int		y;
 
-	i = 0;
 	while (str[++i])
 	{
 		y = -1;

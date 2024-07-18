@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_fun.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgrabows <fgrabows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgrabows <fgrabows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 08:12:19 by fgrabows          #+#    #+#             */
-/*   Updated: 2024/07/18 10:36:00 by fgrabows         ###   ########.fr       */
+/*   Updated: 2024/07/18 16:18:00 by fgrabows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	ft_free_nodes(t_list **stack)
 {
 	t_list	*tmp;
 
+	if(!*stack)
+		return;
 	while ((*stack)->lower)
 	{
 		tmp = (*stack)->lower;

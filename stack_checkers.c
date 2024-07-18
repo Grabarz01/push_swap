@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_checkers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgrabows <fgrabows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgrabows <fgrabows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 08:13:52 by fgrabows          #+#    #+#             */
-/*   Updated: 2024/07/18 10:34:17 by fgrabows         ###   ########.fr       */
+/*   Updated: 2024/07/18 20:17:37 by fgrabows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,4 @@ int	ft_sorted(t_list *stack)
 		stack = stack->lower;
 	}
 	return (1);
-}
-
-void	ft_min_max(t_limit *b_limits, t_list *stack_b)/// maybe
-{
-	if (stack_b->number > stack_b->lower->number)
-	{
-		b_limits->max = stack_b->number;
-		b_limits->min = stack_b->lower->number;
-	}
-	else
-	{
-		b_limits->min = stack_b->number;
-		b_limits->max = stack_b->lower->number;
-	}
 }

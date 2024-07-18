@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cost_cal.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgrabows <fgrabows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgrabows <fgrabows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:35:15 by fgrabows          #+#    #+#             */
-/*   Updated: 2024/07/18 10:36:50 by fgrabows         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:14:16 by fgrabows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,20 @@ void	ft_set_costs(t_cost *price)
 	price->cost = INT_MAX;
 }
 
-void	ft_cost(int pos, int final_pos, t_limit *a_limits,
+void	ft_cost(t_cords* pos, t_limit *a_limits,
 	t_limit *b_limits, t_cost *place)
 {
 	t_cost	tmp_price;
 
 	ft_set_costs(&tmp_price);
-	if (pos < a_limits->size / 2)
-		tmp_price.ra = pos;
+	if (pos->a_pos < a_limits->size / 2)
+		tmp_price.ra = pos->a_pos;
 	else
-		tmp_price.rra = a_limits->size - pos;
-	if (final_pos < b_limits->size / 2)
-		tmp_price.rb = final_pos;
+		tmp_price.rra = a_limits->size - pos->a_pos;
+	if (pos->b_pos < b_limits->size / 2)
+		tmp_price.rb = pos->b_pos;
 	else
-		tmp_price.rrb = b_limits->size - final_pos;
+		tmp_price.rrb = b_limits->size - pos->b_pos;
 	ft_optimalization(&tmp_price);
 	if (place->cost > tmp_price.cost)
 	{
@@ -86,23 +86,26 @@ void	ft_cost(int pos, int final_pos, t_limit *a_limits,
 }
 
 void	ft_cost_cal(t_list *stack_a, t_list *stack_b, t_limit *a_limits,
-	t_limit *b_limits, t_cost *place)
+	t_limit *b_limits)
 {
 	int	value;
-	int	f_place;
-	int	pos;
+	t_cords pos;
+	t_cost place;
 
-	pos = 0;
-	while (pos < a_limits->size)
+	ft_set_costs(&place);
+	place.cost = a_limits->size + b_limits->size;
+	pos.a_pos = 0;
+	while (pos.a_pos < a_limits->size)
 	{
-		value = ft_get_value(stack_a, pos);
+		value = ft_get_value(stack_a, pos.a_pos);
 		if (value > b_limits->max || value < b_limits->min)
 		{
-			f_place = ft_get_pos(stack_b, b_limits->max);
+			pos.b_pos = ft_get_pos(stack_b, b_limits->max);
 		}
 		else
-			f_place = ft_get_one_smaller(stack_b, value);
-		ft_cost(pos, f_place, a_limits, b_limits, place);
-		pos++;
+			pos.b_pos = ft_get_one_smaller(stack_b, value);
+		ft_cost(&pos, a_limits, b_limits, &place);
+		pos.a_pos++;
 	}
+	ft_replace(&stack_a, &stack_b, &place);
 }
